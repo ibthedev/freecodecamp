@@ -34,4 +34,11 @@ function convertToRoman(num) {
 }
 
 // test here
-console.log(convertToRoman(77));
+console.log(convertToRoman(20000));
+
+// Code Explanation:
+// Use an array (romans) to create a matrix containing the Roman numeral for a given power of 10 and, if available, the Roman numeral for that power of 10 times 5.
+// Convert the input number (num) to a reversed array of digits (digits) so that we can loop through those digits starting with the ones position and going up.
+// Loop through each digit, starting with the ones place, and create a Roman numeral string by adding each higher-power Roman numeral to the start of the numeral string a number of times equal to digit. This initial string ignores the Roman numerals that are a power of 10 times 5 and also ignores shortening rules.
+// If the relevant power of 10 has a 5-multiple Roman numeral, in numeral, replace 5-in-a-row occurrences with the relevant 5-multiple Roman numeral (i.e., V, L, or D) and shorten occurrences of 9 * 10^i (e.g., VIIII to VIX) and 4 * 10^i (e.g., XXXX to XL). Order is important here!
+// Finally, return numeral.

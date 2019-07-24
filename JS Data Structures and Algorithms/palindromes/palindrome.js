@@ -4,48 +4,22 @@ function palindrome(str) {
   let rword = "";
   let letters = [];
   let letter = "";
+  const pattern = /[\W_]/g;
 
-  /* Put the letters of the original unfiltered word into an array and a variable  */
+
 
   for (let i = 0; i < str.length; i++) {
     letter = str[i];
-    if (letter == "/") {
-    } else if (letter == " ") {
-    } else if (letter == ")") {
-    } else if (letter == "(") {
-    } else if (letter == "#") {
-    } else if (letter == "%") {
-    } else if (letter == "$") {
-    } else if (letter == "&") {
-    } else if (letter == ",") {
-    } else if (letter == ".") {
-    } else if (letter == "_") {
-    } else if (letter == "-") {
-    } else if (letter == "/") {
-    } else if (letter == "g") {
-    } else if (letter == "]") {
-    } else if (letter == "[") {
-    } else if (letter == "{") {
-    } else if (letter == "}") {
-    } else if (letter == "w") {
-    } else if (letter == `"\"`) {
-    } else {
+    if (!letter.match(pattern)) {
       fword += letter;
       letters.push(letter);
     }
   }
 
-  // Pop of the letters of the stack in reverse order
-
   for (let i = 0; i < fword.length; i++) {
     rword += letters.pop();
   }
 
-  if (rword === fword) {
-    return true;
-  } else {
-    return false;
-  }
+  return rword === fword;
 }
-
-console.log(palindrome(`m#o&m`));
+console.log(palindrome("A man, a plan, a canal. Panama"));
