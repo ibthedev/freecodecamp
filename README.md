@@ -1,2 +1,2 @@
 # freecodecamp
-Contains all my free code camp projects.
+Contains all my freeCodeCamp projects.
